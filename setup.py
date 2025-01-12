@@ -1,27 +1,50 @@
+# from setuptools import find_packages ,setup 
+# from typing import List
+
+
+
+# def get_requirements()->List[str]:
+
+#     reuirements_list : List[str] =[]
+
+#     return reuirements_list
+
+
+
+
+
+
+# setup (
+#     name = 'sensor',
+#     version="0.0.1",
+#     author="prince",
+#     author_email="princekatiyar986@gmail.com",
+#     packages = find_packages(),
+#     install_requires = get_requirements() , #["pymongo"]
+
+# )
+
 from setuptools import find_packages,setup
 from typing import List
 
-HYPEN_E_DOT='-e .'
+def get_requirements()->List[str]:
+    """
 
-def get_requirements(file_path:str)->List[str]:
-    requirements=[]
-    with open(file_path) as file_obj:
-        requirements=file_obj.readlines()
-        requirements=[req.replace("\n","") for req in requirements]
 
-        if HYPEN_E_DOT in requirements:
-            requirements.remove(HYPEN_E_DOT)
+    This function will return list of requirements
+    """
+    requirement_list:List[str] = []
 
-    return requirements
-
+    """
+    Write a code to read requirements.txt file and append each requirements in requirement_list variable.
+    """
+    return requirement_list
 
 setup(
-
-name="Xray",
-version="0.0.1",
-author="ujjwal madawat",
-author_email="ujjjwalm9895@gmail.com",
-install_requires=get_requirements(r"requirements.txt"),
-package=find_packages()
-
+    name="Xray",
+    version="0.0.1",
+    author="ujjwalmadawat",
+    author_email="ujjwalm9895@gmail.com",
+    packages = find_packages(),
+    install_requires=get_requirements(),#["pymongo==4.2.0"],
 )
